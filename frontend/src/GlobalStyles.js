@@ -29,13 +29,15 @@ const GlobalStyle = createGlobalStyle`
    }
   
   .small-text {
+    font-weight: 400;
     font-size: 12px;
     line-height: 15px;
   }
   
   .nav-text {
     font-size: 10px;
-    line-height: 11.72px;
+    line-height: 22.72px;
+    letter-spacing: 2px;
   }
 `;
 

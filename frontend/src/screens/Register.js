@@ -10,6 +10,13 @@ const YogaImg =styled.img`
   width: 100vw;
   `;
 
+const SimpleLink= styled(LinkStyled)`
+  font-size: 16px;
+  line-height: 21px;
+  margin: 13px 0;
+  padding: 12px 25px;
+`;
+
 function Register() {
     return(
       <div>
@@ -18,7 +25,7 @@ function Register() {
         </div>
         <BtnBox>
           <Button as={Link} to="/register-1">registrieren</Button>
-          <LinkStyled to="/login">oder anmelden</LinkStyled>
+          <SimpleLink to="/login">oder anmelden</SimpleLink>
         </BtnBox>
       </div>
     );

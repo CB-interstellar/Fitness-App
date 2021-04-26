@@ -1,25 +1,59 @@
+import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as Haus } from '../icons/Haus.svg';
 import { ReactComponent as Hanteln } from '../icons/Hanteln.svg';
 import { ReactComponent as Gesicht } from '../icons/Gesicht.svg';
 
+
+const NavBar= styled.ul`
+   list-style-type: none;
+   background-color: ${props => props.theme.rbcolors.beige};
+   margin-bottom: 0;
+   padding: 0;
+   width: 100vw;
+   position: fixed;
+   bottom: 0;
+   display: flex;
+   justify-content: space-around;
+   align-items: baseline;
+
+   & a {
+     text-decoration: none;
+     color: ${props => props.theme.bbcolors.blue};
+     margin-top: 1vh;
+     display:flex;
+     flex-direction: column;
+     align-items: center;
+
+
+     &:visited {
+      color: ${props => props.theme.bbcolors.blue};
+    }
+
+     &:hover {
+        color: ${props => props.theme.rbcolors.mediumblue};
+     }
+
+     &.active {
+       color: ${props => props.theme.rbcolors.neonblue};
+     }
+   }
+`;
+
 function Navigation() {
     return(
         <div>
-          <ul>
+          <NavBar>
             <li>
-              <Haus />
-              <NavLink to='/home'>HOME</NavLink>
+              <NavLink to='/home' className='nav-text' activeClassName='active'><Haus />HOME</NavLink>
             </li>
             <li>
-              <Hanteln />
-              <NavLink to='/browse'>BROWSE</NavLink>
+              <NavLink to='/browse' className='nav-text' activeClassName='active'><Hanteln />BROWSE</NavLink>
             </li>
             <li>
-            <Gesicht />
-              <NavLink to='/profil'>PROFIL</NavLink>
+              <NavLink to='/profil' className='nav-text' activeClassName='active'><Gesicht />PROFIL</NavLink>
             </li>
-          </ul>
+          </NavBar>
         </div>
     );
 };
