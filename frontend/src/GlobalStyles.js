@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 21px;
     color: #1d2a73;
     margin: 0;
+    box-sizing: border-box;
     }
   
    h1 {
