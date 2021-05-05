@@ -9,6 +9,7 @@ import Workout from '../screens/Workout';
 import Programm from '../screens/Programm';
 import Onboarding from '../screens/Onboarding';
 import Profil from '../screens/Profil';
+import Exercise from '../screens/Exercise';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
           <Route path="/onboarding">
             <Onboarding />
           </Route>
+          <Route path="/exercise">
+            <Exercise />
+          </Route>
         </Switch>
       </main>
       
@@ -59,3 +63,4 @@ export default App;
 //our-domain.com/workout         => Workout
 //our-domain.com/programm        => Programm
 //our-domain.com/onboarding      => Onboarding
+//our-domain.com/exercise        => Exercise 1
