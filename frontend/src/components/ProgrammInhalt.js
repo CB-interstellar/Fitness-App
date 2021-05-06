@@ -34,14 +34,14 @@ const Titel= styled.div`
   }
   `;
 
-function ProgrammInhalt() {
+function ProgrammInhalt(props) {
     return(
         <TitelBox>
           <Herz />
           <Hinweis className="small-text">Neu</Hinweis>
           <Titel>
             <LinkStyled to="/programm">
-              <h2>Titel des Programms</h2>
+              <h2>{props.name}</h2>
             </LinkStyled>
           </Titel>
         </TitelBox>

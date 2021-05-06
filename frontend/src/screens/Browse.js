@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Navigation from '../components/Navigation';
 import ProgrammInhalt from '../components/ProgrammInhalt';
+import programmdata from '../data/Programmdata';
 
 const Heading = styled.h2`
   text-align: left;
@@ -20,24 +21,20 @@ const ProBox = styled.div`
   flex-direction: column;
 `;
 
+function createTitel(titelData) {
+  return <ProgrammInhalt 
+              key={titelData.id}
+              name={titelData.name}
+          />
+};
+
 function Browse() {
     return(
         <div>
           <Heading>Browse</Heading>
           <Filter className='small-text'>Filter</Filter>
           <ProBox>
-             <ProgrammInhalt />
-             <ProgrammInhalt />
-             <ProgrammInhalt />
-             <ProgrammInhalt />
-             <ProgrammInhalt />
-             <ProgrammInhalt />
-             <ProgrammInhalt />
-             <ProgrammInhalt />
-             <ProgrammInhalt />
-             <ProgrammInhalt />
-             <ProgrammInhalt />
-             <ProgrammInhalt />
+            {programmdata.map(createTitel)}
           </ProBox>
           <Navigation />
         </div>
