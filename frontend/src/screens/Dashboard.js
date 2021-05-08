@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useQuery, gql } from '@apollo/client';
 
 import Yoga2 from '../icons/Yoga2.svg';
 import Navigation from '../components/Navigation';
@@ -45,10 +46,21 @@ const Workout = styled.div`
     }
     `;
 
+const DATACHANGE= gql`
+  query {
+    allExercise {
+      title
+    }
+  }
+`;
+
 function Dashboard() {
+  const { loading, error, data } = useQuery(DATACHANGE);
+  console.log(data);
+
     return(
         <div>
-          <Gruß>Guten<br></br>{Tageszeit},<br></br>Name</Gruß>
+          <Gruß>Guten<br></br>{Tageszeit},<br></br>{loading? 'loading': data.allExercise[0].title}</Gruß>
           <Heute>
             <h2>Dein Workout heute</h2>
             <p className='small-text'>Trainingsplan</p>

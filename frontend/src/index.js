@@ -10,21 +10,23 @@ import Theme from './components/themes/Theme';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
-//Bisher ungenutzte Importe:
 
-//import { ApolloClient, InMemoryCache } from '@apollo/client';
-//  const client = new ApolloClient({
-//    uri: 'https://48p1r2roz4.sse.codesandbox.io',
-//    cache: new InMemoryCache()
-//});
+import { ApolloProvider } from '@apollo/client/react';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+  const client = new ApolloClient({
+    uri: 'https://q1fekg12.api.sanity.io/v1/graphql/production/default',
+    cache: new InMemoryCache()
+});
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+    <ApolloProvider client={client}>
       <ThemeProvider theme={Theme}>
         <GlobalStyle />
         <App />
       </ThemeProvider>
+     </ApolloProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
