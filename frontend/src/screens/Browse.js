@@ -5,6 +5,9 @@ import Navigation from '../components/Navigation';
 import ProgrammInhalt from '../components/ProgrammInhalt';
 import programmdata from '../data/Programmdata';
 
+
+
+
 const Heading = styled.h2`
   text-align: left;
   margin: 10.2vh 4.8vw 0 4.8vw;
@@ -29,6 +32,7 @@ function createTitel(titelData) {
 };
 
 function Browse() {
+  
     return(
         <div>
           <Heading>Browse</Heading>
