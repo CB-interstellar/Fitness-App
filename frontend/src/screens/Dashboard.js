@@ -65,7 +65,7 @@ function Dashboard() {
           </Heute>
           <YogaImg src={Yoga2} alt="Yoga Graphik" />
           <Workout>                                              
-            <p>Workout: <br></br>Programm: {loading? 'loading': data.allProgram[0].title}</p>
+            <p>Workout: {loading? 'loading': data.allProgram[0].title}<br/>Programm: {loading? 'loading': data.allProgram[0].title}</p>
             <ul className='small-text'>
               <li>XXX kcal</li>
               <li>26 Min.</li>
